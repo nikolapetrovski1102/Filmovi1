@@ -1,0 +1,51 @@
+﻿@model Filmovi.Models.Bileti
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Tickets</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ImeFilm)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ImeFilm)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Zanr)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Zanr)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Avtor)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Avtor)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.BrBileti)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.BrBileti)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Date)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Date)
+        </dd>
+    </dl>
+</div>
+<div>
+    @if (User.IsInRole("Admin"))
+    {
+        <a asp-action="Edit" asp-route-id="@Model?.Id">Edit |</a>
+    }
+    <a asp-action="Index">Back to List</a>
+</div>
